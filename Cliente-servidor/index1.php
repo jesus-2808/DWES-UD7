@@ -23,9 +23,24 @@ function getCiudad($poblacion) {
 
         $stmt->execute();
 
-        $libro = $stmt->fetch();
+        $ciudades = $stmt->fetchAll();
 
-        return $libro;
-    
+        return $ciudades;
+/*
+        $ciudades = [];
+        while ($ciudad = $ciudades->fetch()) {
+            $ciudades[] = $ciudad;
+        }
+        return $ciudades;
+    }
+        
+       */
+
+    }
+           
+          
   
-}
+
+
+
+?>

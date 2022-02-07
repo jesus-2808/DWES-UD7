@@ -1,7 +1,8 @@
+
 <?php //IMPORTANTE: ELIMINA EL ESPACIO ANTES DE LA INTERROGACIÓN
 // Vaciamos algunas variables
 $error = "";
-$resultado = "";
+$resultado = [];
 
 
 // Iniciamos el cliente SOAP
@@ -18,6 +19,9 @@ if (isset($_POST['enviar'])) {
         // Si los parámetros son correctos, llamamos a la función letra de suma.php
         $resultado = $cliente->getCiudad($_POST['poblacion']);
        var_dump($resultado);
+       foreach($resultado as $ciudad) {
+        print "<p style='font-size: 12pt;font-weight: bold;color: #0066CC;'>" . $ciudad['ciudad'] . "</p>";
+    }
     } else {
         $error = "<strong>Error:</strong> resultado incorrecto, formato no soportado<br/><br/>Ej: 1";
     }
@@ -39,6 +43,7 @@ if (isset($_POST['enviar'])) {
   
       print "<input type='submit' name='enviar' value='Calcular numero'>";
       print "<p class='error'>$error</p>";
+      
     
   ?>
     
