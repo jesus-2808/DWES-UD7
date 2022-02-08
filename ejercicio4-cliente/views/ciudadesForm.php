@@ -6,7 +6,7 @@
     </head>
 <body>
    
-<form action="ejer3.php" method="post">
+<form action="?controller=ciudades&action=formulario" method="post">
     <?php //IMPORTANTE: ELIMINA EL ESPACIO ANTES DE LA INTERROGACIÓN
      
       print "<input type='number' name='poblacion'>";
