@@ -6,7 +6,7 @@
     define ('DEFAULT_CONTROLLER', "ciudades");
 
     //Si no se indica una acción, esta acción es la que se usará
-    define ('DEFAULT_ACTION', "ciudadesForm");
+    define ('DEFAULT_ACTION', "formulario");
 
     //Obtenemos el controlador.
     //Si el usuario no lo introduce, seleccionamos el de por defecto.
