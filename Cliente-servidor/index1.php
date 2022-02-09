@@ -1,6 +1,6 @@
 <?php //IMPORTANTE: ELIMINA EL ESPACIO ANTES DE LA INTERROGACIÓN
 // Instanciamos un nuevo servidor SOAP
-$uri="http://192.168.1.4/DWES-UD7/Cliente-servidor";
+$uri="http://192.168.129.193/DWES-UD7/Cliente-servidor/";
 $server = new SoapServer(null,array('uri'=>$uri));
 $server->addFunction("getCiudad");
 $server->handle();
@@ -8,8 +8,8 @@ $server->handle();
 // Función para obtener si el numero es par
 
 function getConnection() {
-    $user = 'root';
-    $pwd = 'root';
+    $user = 'developer';
+    $pwd = 'developer';
     return new PDO('mysql:host=localhost;dbname=ciudades', $user, $pwd);
 }
 function getCiudad($poblacion) {

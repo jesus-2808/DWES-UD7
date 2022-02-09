@@ -15,9 +15,9 @@
                 
                 $resultado = $cliente->getCiudades($poblacion);
                 
-      /*  foreach($resultado as $ciudad) {
+      foreach($resultado as $ciudad) {
             print "<p style='font-size: 12pt;font-weight: bold;color: #0066CC;'>" . $ciudad['ciudad'] . "</p>";
-        }*/
+        }
         var_dump($cliente);
         var_dump($resultado);
             } else {

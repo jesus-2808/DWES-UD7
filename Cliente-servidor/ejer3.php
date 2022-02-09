@@ -7,8 +7,8 @@ $resultado = [];
 
 // Iniciamos el cliente SOAP
 // Escribimos la dirección donde se encuentra el servicio
-$url = "http://192.168.1.4/DWES-UD7/Cliente-servidor/index1.php";
-$uri = "http://192.168.1.4/DWES-UD7/Cliente-servidor";
+$url = "http://192.168.129.193/DWES-UD7/Cliente-servidor/index1.php";
+$uri = "http://192.168.129.193/DWES-UD7/Cliente-servidor";
 $cliente = new SoapClient(null, array('location' => $url, 'uri' => $uri));
 
 // Ejecutamos las siguientes líneas al enviar el formulario

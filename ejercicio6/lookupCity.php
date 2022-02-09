@@ -4,8 +4,8 @@ if (isset($_POST['enviar'])) {
     $wsdl = 'https://www.crcind.com/csp/samples/SOAP.Demo.CLS?WSDL';
 
     $params = array(
-        "Arg1" => $_POST['num1'],
-        "Arg2" => $_POST['num2']
+        "zip" => $_POST['zip'],
+
     );
 
     $options = array(
@@ -21,7 +21,7 @@ if (isset($_POST['enviar'])) {
     );
 
     $soap = new SoapClient($wsdl, $options);
-    $result = $soap->AddInteger($params);
+    $result = $soap->LookupCity($params);
 
     // Si los parámetros son correctos, llamamos a la función letra de calcularLetra.php
 
@@ -40,18 +40,17 @@ if (isset($_POST['enviar'])) {
 
 <body>
 
-    <form action="ejercicio5.php" method="post">
+    <form action="lookupCity.php" method="post">
         <?php //IMPORTANTE: ELIMINA EL ESPACIO ANTES DE LA INTERROGACIÓN
 
 
 
-        print "<input type='number' name='num1'>";
-
-        print "<input type='number' name='num2'>";
-
-        print "<input type='submit' name='enviar' value='calcular'>";
+        print "<input type='number' name='zip'>";
+        print "<input type='submit' name='enviar' value='Dividir'>";
         if (isset($_POST['enviar'])) {
-            print "<p style='font-size: 12pt;font-weight: bold;color: #0066CC;'>" . $result->AddIntegerResult . "</p>";
+            foreach ($result->LookupCityResult as $city) {
+                print "<p style='font-size: 12pt;font-weight: bold;color: #0066CC;'>" . $city . "</p><br>";
+            }
         }
 
         ?>

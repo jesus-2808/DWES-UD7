@@ -21,7 +21,7 @@ if (isset($_POST['enviar'])) {
     );
 
     $soap = new SoapClient($wsdl, $options);
-    $result = $soap->AddInteger($params);
+    $result = $soap->DivideInteger($params);
 
     // Si los parámetros son correctos, llamamos a la función letra de calcularLetra.php
 
@@ -40,7 +40,7 @@ if (isset($_POST['enviar'])) {
 
 <body>
 
-    <form action="ejercicio5.php" method="post">
+    <form action="divideInteger.php" method="post">
         <?php //IMPORTANTE: ELIMINA EL ESPACIO ANTES DE LA INTERROGACIÓN
 
 
@@ -49,9 +49,9 @@ if (isset($_POST['enviar'])) {
 
         print "<input type='number' name='num2'>";
 
-        print "<input type='submit' name='enviar' value='calcular'>";
+        print "<input type='submit' name='enviar' value='Dividir'>";
         if (isset($_POST['enviar'])) {
-            print "<p style='font-size: 12pt;font-weight: bold;color: #0066CC;'>" . $result->AddIntegerResult . "</p>";
+            print "<p style='font-size: 12pt;font-weight: bold;color: #0066CC;'>" . $result->DivideIntegerResult . "</p>";
         }
 
         ?>
